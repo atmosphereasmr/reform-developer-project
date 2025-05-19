@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import styled, { keyframes } from "styled-components";
+
 import Illo from "../../assets/icons/Illo.jsx";
 
 const scrollLeft = keyframes`
@@ -13,20 +14,20 @@ const scrollLeft = keyframes`
 `;
 
 const MarqueeContainer = styled.div`
+  align-items: center;
+  animation: ${scrollLeft} 2s ease-out forwards;
   display: flex;
   justify-content: center;
-  align-items: center;
   position: absolute;
-  width: 1440px;
   text-transform: uppercase;
-  animation: ${scrollLeft} 2s ease-out forwards;
+  width: 1440px;
 `;
 
 const MarqueeItem = styled.span`
   font-size: 12pt;
+  margin: 0 30px;
   position: relative;
   z-index: 1;
-  margin: 0 30px;
 `;
 
 export default function Marquee() {

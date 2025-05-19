@@ -1,36 +1,33 @@
-"use client"
-import React from 'react';
+"use client";
+import React from "react";
 import styled from "styled-components";
 import media from "styled-media-query";
 
-import CardCarousel from '../CardCarousel/index.jsx';
+import CardCarousel from "../CardCarousel/index.jsx";
 
 const CarouselContainer = styled.div`
-width: 100%;
-height: 328px;
-background-color: #fbfaf6;
-border: 1px solid #ccddc7;
-display: flex;
-justify-content: center;
-align-items: center;
-overflow: hidden;
+  align-items: center;
+  background-color: #fbfaf6;
+  border: 1px solid #ccddc7;
+  display: flex;
+  height: 328px;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
 
-${media.greaterThan("374px")`
+  ${media.greaterThan("374px")`
 height: 270px;
 `}
 
-${media.greaterThan("1023px")`
+  ${media.greaterThan("1023px")`
 height: 328px;
 `}
-
-
-`
+`;
 
 export default function IntroRight() {
-
   return (
     <CarouselContainer>
       <CardCarousel />
     </CarouselContainer>
-  )
+  );
 }

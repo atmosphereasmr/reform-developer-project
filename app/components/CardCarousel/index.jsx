@@ -246,6 +246,7 @@ export default function CardCarousel() {
   const [activeIndex, setActiveIndex] = useState(1);
   const [trackOffset, setTrackOffset] = useState(0);
   const [dummyData, setDummyData] = useState(initDummyData);
+  const [widthDeviceAdjustment, setWidthDeviceAdjustment] = useState(0);
   const cardRefs = useRef([]);
   const trackRef = useRef();
 
@@ -261,17 +262,15 @@ export default function CardCarousel() {
 
   // Determine width of screen (needed to align carousel for desktop, mobile or tablet)
 
-  let widthDeviceAdjustment;
-
   useEffect(() => {
     if (window.innerWidth <= 377) {
-      widthDeviceAdjustment = 33;
+      setWidthDeviceAdjustment(33);
     } else if (window.innerWidth >= 378 && window.innerWidth <= 1024) {
-      widthDeviceAdjustment = 30;
+      setWidthDeviceAdjustment(30);
     } else {
-      widthDeviceAdjustment = 40;
+      setWidthDeviceAdjustment(40);
     }
-  }, [])
+  }, [activeIndex]);
 
   const animateToCard = (newIndex, offset) => {
     let currentCard = cardRefs.current[activeIndex];
