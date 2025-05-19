@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'SoehneBuch';
+  src: url('/fonts/soehne-buch.woff2') format('woff2'),
+       url('/fonts/soehne-buch.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

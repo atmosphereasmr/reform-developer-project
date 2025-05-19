@@ -24,3 +24,23 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.green-500-text {
+  color: #153e2a;
+}
+
+.green-400-text {
+  color: #30715D;
+}
+
+.green-300-text {
+  color: #6E9E8F;
+}
+
+.green-200-text {
+  color: #00b684;
+}
+
+.orange-text {
+  color: #d87906;
+}
