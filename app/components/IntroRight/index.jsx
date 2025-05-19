@@ -16,12 +16,12 @@ const CarouselContainer = styled.div`
   width: 100%;
 
   ${media.greaterThan("374px")`
-height: 270px;
-`}
+    height: 270px;
+  `}
 
   ${media.greaterThan("1023px")`
-height: 328px;
-`}
+    height: 328px;
+  `}
 `;
 
 export default function IntroRight() {

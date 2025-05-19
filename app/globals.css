@@ -44,3 +44,15 @@ body {
 .orange-text {
   color: #d87906;
 }
+
+:root {
+  --body-xxs: 12pt;
+  --body-xs: 14pt;
+  --body-s: 16pt;
+  --body-reg: 20pt;
+  --body-l: 24pt;
+  --body-xl: 28pt;
+  --title: 12pt;
+  --heading-05: 41pt;
+  --heading-01: 81pt;
+}

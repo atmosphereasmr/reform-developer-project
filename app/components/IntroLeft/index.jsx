@@ -17,28 +17,27 @@ const Container = styled.div`
   z-index: 5;
 
   ${media.greaterThan("374px")`
-height: 270px;
-padding: 15px;
-`}
+    height: 270px;
+    padding: 15px;
+  `}
 
   ${media.greaterThan("1023px")`
-height: 328px;
-`}
+    height: 328px;
+  `}
 `;
 
 const Text = styled.div`
-  font-size: 18px;
   text-align: left;
 
   ${media.greaterThan("374px")`
-font-size: 16px;
-width: 100%;
-`}
+    font-size: var(--body-xs);
+    width: 100%;
+  `}
 
   ${media.greaterThan("1023px")`
-font-size: 18px;
-width: 75%;
-`}
+    font-size: var(--body-s);
+    width: 75%;
+  `}
 `;
 
 export default function IntroLeft() {

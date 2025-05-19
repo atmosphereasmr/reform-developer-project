@@ -49,8 +49,8 @@ const CarouselWrapper = styled.div`
   width: 100%;
 
   ${media.greaterThan("374px")`
-  width: 343px;
-`}
+    width: 343px;
+  `}
 
   ${media.greaterThan("1023px")`
     width: 480px;
@@ -66,35 +66,34 @@ const CarouselTrack = styled.div`
 `;
 
 const CardContainer = styled.div`
+  height: 200px;
   position: relative;
 
   ${media.greaterThan("374px")`
-  height: 175px;
-`}
+    height: 175px;
+  `}
 
   ${media.greaterThan("1023px")`
-  height: 200px;
+    height: 200px;
   `}
 
   ${media.greaterThan("1439px")`
-  height: 244px;
+    height: 244px;
   `}
-
-height: 200px;
 
   ${media.greaterThan("374px")`
-flex: 0 0 33%;
-right: 0%;
-`}
+    flex: 0 0 34%;
+    right: 1%;
+  `}
 
   ${media.greaterThan("1023px")`
-  flex: 0 0 30%;
-  right: -5%;
+    flex: 0 0 30%;
+    right: -5%;
   `}
 
   ${media.greaterThan("1439px")`
-  flex: 0 0 40%;
-  right: 10%;
+    flex: 0 0 40%;
+    right: 10%;
   `}
 `;
 
@@ -117,16 +116,16 @@ const CardTopContainer = styled.div`
   width: 100%;
 
   ${media.greaterThan("374px")`
-  padding: 15px 15px 0 15px
+    padding: 15px 15px 0 15px
   `}
 
   ${media.greaterThan("1023px")`
-padding: 15px 15px 0 15px
-`}
+    padding: 15px 15px 0 15px
+  `}
 
   ${media.greaterThan("1439px")`
-padding: 30px 30px 0 30px
-`}
+    padding: 30px 30px 0 30px
+  `}
 `;
 
 const StyledImage = styled.img`
@@ -134,13 +133,13 @@ const StyledImage = styled.img`
   object-fit: cover;
 
   ${media.greaterThan("374px")`
-  width: 60px;
-  height: 60px;
+    width: 60px;
+    height: 60px;
   `}
 
   ${media.greaterThan("1439px")`
-  width: 80px;
-  height: 80px;
+    width: 80px;
+    height: 80px;
   `}
 `;
 
@@ -153,16 +152,16 @@ const BottomContainer = styled.div`
   width: 100%;
 
   ${media.greaterThan("374px")`
-  padding: 15px 15px 0 15px
+    padding: 15px 15px 0 15px
   `}
 
   ${media.greaterThan("1023px")`
-padding: 15px 15px 0 15px
-`}
+    padding: 15px 15px 0 15px
+  `}
 
   ${media.greaterThan("1439px")`
-padding: 30px 30px 0 30px
-`}
+    padding: 30px 30px 0 30px
+  `}
 `;
 
 const CompanyNameContainer = styled.div`
@@ -171,59 +170,59 @@ const CompanyNameContainer = styled.div`
   justify-content: flex-start;
 
   ${media.greaterThan("374px")`
-  font-size: 12px;
-`}
+    font-size: var(--body-xs);
+  `}
 
   ${media.greaterThan("1023px")`
-  font-size: 16px;
+    font-size: var(--body-s);
   `}
 
   ${media.greaterThan("1439px")`
-  font-size: 20px;
+    font-size: var(--body-reg);
   `}
 `;
 
 const Text = styled.div`
-  font-size: 20px;
+  font-size: var(--body-reg);
 
   ${media.greaterThan("374px")`
-  font-size: 10px;
+    font-size: var(--body-xxs);
   `}
 
   ${media.greaterThan("1023px")`
-    font-size: 14px;
-    `}
+    font-size: var(--body-xs);
+  `}
   
-    ${media.greaterThan("1439px")`
-    font-size: 16px;
-    `}
+  ${media.greaterThan("1439px")`
+    font-size: var(--body-s);
+  `}
 `;
 
 const DetailBarsContainer = styled.div`
   ${media.greaterThan("374px")`
-width: 120px;
-`}
-
-  ${media.greaterThan("1023px")`
-width: 207px;
-`}
-`;
-
-const SubText = styled.div`
-  font-size: 15px;
-  opacity: 40%;
-
-  ${media.greaterThan("374px")`
-font-size: 10px
+    width: 120px;
   `}
 
   ${media.greaterThan("1023px")`
-    font-size: 12px;
-    `}
+    width: 207px;
+  `}
+`;
+
+const SubText = styled.div`
+font-size: var(--body-s);
+  opacity: 40%;
+
+  ${media.greaterThan("374px")`
+    font-size: var(--body-xxs);
+  `}
+
+  ${media.greaterThan("1023px")`
+    font-size: var(--body-xxs);
+  `}
   
-    ${media.greaterThan("1439px")`
-    font-size: 14px;
-    `}
+  ${media.greaterThan("1439px")`
+    font-size: var(--body-xs);
+  `}
 `;
 
 const TopRightContainer = styled.div`
@@ -264,7 +263,7 @@ export default function CardCarousel() {
 
   useEffect(() => {
     if (window.innerWidth <= 377) {
-      setWidthDeviceAdjustment(33);
+      setWidthDeviceAdjustment(34);
     } else if (window.innerWidth >= 378 && window.innerWidth <= 1024) {
       setWidthDeviceAdjustment(30);
     } else {
@@ -405,7 +404,7 @@ export default function CardCarousel() {
       <CarouselWrapper style={{ position: "relative" }}>
         <CarouselTrack ref={trackRef} style={{ display: "flex" }}>
           {dummyData.map((data, index) => (
-            <CardContainer>
+            <CardContainer key={index}>
               <Card
                 style={{ width: "100%" }}
                 key={index}

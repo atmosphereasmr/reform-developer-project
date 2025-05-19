@@ -24,7 +24,7 @@ const MarqueeContainer = styled.div`
 `;
 
 const MarqueeItem = styled.span`
-  font-size: 12pt;
+  font-size: var(--body-xss);
   margin: 0 30px;
   position: relative;
   z-index: 1;
