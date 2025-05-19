@@ -19,10 +19,14 @@ const Container = styled.div`
   ${media.greaterThan("374px")`
     height: 270px;
     padding: 15px;
+    border-top-color: transparent;
+    border-right-color: #ccddc7;
   `}
 
   ${media.greaterThan("1023px")`
     height: 328px;
+    border-top-color: #ccddc7;
+    border-right-color: transparent;
   `}
 `;
 

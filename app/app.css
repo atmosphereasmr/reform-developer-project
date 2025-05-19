@@ -49,6 +49,22 @@
   color: #888;
 }
 
+.hide-border {
+
+}
+
+@media (max-width: 375px) {
+  .hide-border {
+    border-top: 1px solid transparent;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hide-border {
+    border-right: 1px solid transparent;
+  }
+}
+
 .content-container {
   padding: 50px 30px 0 30px;
 }
