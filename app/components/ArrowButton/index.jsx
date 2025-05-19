@@ -6,28 +6,28 @@ import { gsap } from "gsap";
 import RightArrow from "../../assets/icons/RightArrow.jsx";
 
 const ArrowCircle = styled.div`
-  width: ${({ diameter }) => diameter};
-  height: ${({ diameter }) => diameter};
-  border-radius: 100%;
-  border: 1px solid #30715d;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  border: 1px solid #30715d;
+  border-radius: 100%;
   cursor: pointer;
+  display: flex;
+  height: ${({ diameter }) => diameter};
+  justify-content: center;
   padding-right: 5px;
   position: relative;
+  width: ${({ diameter }) => diameter};
   z-index: 1;
 `;
 
 const WhiteDot = styled.div`
-  width: 50%;
-  height: 50%;
-  border-radius: 100%;
-  position: absolute;
-  bottom: 60%;
-  right: 60%;
   background-color: #fbfaf6;
+  border-radius: 100%;
+  bottom: 60%;
+  height: 50%;
   pointer-events: none;
+  position: absolute;
+  right: 60%;
+  width: 50%;
 `;
 
 export default function ArrowButton({

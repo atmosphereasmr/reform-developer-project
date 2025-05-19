@@ -5,10 +5,11 @@ import styled, { keyframes } from "styled-components";
 import media from "styled-media-query";
 
 const HeaderContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
+align-items: center;
+display: flex;
+flex-flow: column;
+justify-content: center;
+
 
   ${media.greaterThan("376px")`
   height: 250px;

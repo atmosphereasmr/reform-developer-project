@@ -1,12 +1,14 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import styled from "styled-components";
+import { Row } from "react-bootstrap";
+import { gsap } from "gsap";
+import media from "styled-media-query";
+
 import ArrowButton from "../ArrowButton";
+
 import Dropdown from "../../assets/icons/Dropdown.jsx";
 import DetailBars from "../../assets/icons/DetailBars";
 import BarCode from "../../assets/icons/BarCode";
-import { Row, Col } from "react-bootstrap";
-import { gsap } from "gsap";
-import media from "styled-media-query";
 
 const initDummyData = [
   {
@@ -14,7 +16,7 @@ const initDummyData = [
     position: "Owner, CEO",
     phone: "15-26669-890",
     company: "Sunnyside Up Day Care",
-    image: "/images/sarah.png"
+    image: "/images/sarah.png",
   },
   {
     name: "Julianna alvarez",
@@ -40,11 +42,11 @@ const initDummyData = [
 ];
 
 const CarouselWrapper = styled.div`
-  width: 100%;
-  overflow: hidden;
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  overflow: hidden;
+  width: 100%;
 
   ${media.greaterThan("374px")`
   width: 343px;
@@ -97,22 +99,22 @@ right: 0%;
 `;
 
 const Card = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  background-color: #f0f0f0;
   border: 1px solid #6e9e8f;
   border-radius: 15px;
-  background-color: #f0f0f0;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
 `;
 
 const CardTopContainer = styled.div`
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: space-between;
   align-items: flex-start;
+  display: flex;
+  height: auto;
+  justify-content: space-between;
+  width: 100%;
 
   ${media.greaterThan("374px")`
   padding: 15px 15px 0 15px
@@ -143,12 +145,12 @@ const StyledImage = styled.img`
 `;
 
 const BottomContainer = styled.div`
-  width: 100%;
-  height: 75px;
+  align-items: flex-start;
   display: flex;
   flex-flow: column;
+  height: 75px;
   justify-content: flex-end;
-  align-items: flex-start;
+  width: 100%;
 
   ${media.greaterThan("374px")`
   padding: 15px 15px 0 15px
@@ -164,9 +166,9 @@ padding: 30px 30px 0 30px
 `;
 
 const CompanyNameContainer = styled.div`
+  align-items: center;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
 
   ${media.greaterThan("374px")`
   font-size: 12px;
@@ -225,18 +227,18 @@ font-size: 10px
 `;
 
 const TopRightContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
   align-items: flex-end;
+  display: flex;
   flex-flow: column;
-  text-transform: uppercase;
   font-family: "SoehneBuch", sans-serif;
+  justify-content: flex-end;
+  text-transform: uppercase;
 `;
 
 const ArrowContainer = styled.div`
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
   margin-top: 10px;
 `;
 
@@ -261,13 +263,15 @@ export default function CardCarousel() {
 
   let widthDeviceAdjustment;
 
-  if (window.innerWidth <= 377) {
-    widthDeviceAdjustment = 33;
-  } else if (window.innerWidth >= 378 && window.innerWidth <= 1024) {
-    widthDeviceAdjustment = 30;
-  } else {
-    widthDeviceAdjustment = 40;
-  }
+  useEffect(() => {
+    if (window.innerWidth <= 377) {
+      widthDeviceAdjustment = 33;
+    } else if (window.innerWidth >= 378 && window.innerWidth <= 1024) {
+      widthDeviceAdjustment = 30;
+    } else {
+      widthDeviceAdjustment = 40;
+    }
+  }, [])
 
   const animateToCard = (newIndex, offset) => {
     let currentCard = cardRefs.current[activeIndex];
@@ -437,15 +441,15 @@ export default function CardCarousel() {
                       style={{
                         width: "100%",
                         display: "flex",
-                        justifyContent: "space-between"
+                        justifyContent: "space-between",
                       }}
                     >
                       <DetailBarsContainer>
                         <DetailBars />
                       </DetailBarsContainer>
                       <div>
-                      <BarCode />
-                    </div>
+                        <BarCode />
+                      </div>
                     </div>
                   </BottomContainer>
                 </Row>
